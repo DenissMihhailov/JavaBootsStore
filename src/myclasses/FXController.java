@@ -181,11 +181,6 @@ public class FXController {
                 dropDownMenu.setValue(null);
                 txtFieldFirm.setEditable(true);
                 txtFieldFirm.setText("");
-                txtFieldFirm.setPromptText("Введите новую фирму!");
-                brand.setBrand(txtFieldFirm.getText());
-                brandFacade.create(brand);
-                sneaker.setSneakerFirm(brand);
-                
             }
         });
         radioBtnOld.setOnAction(new EventHandler<ActionEvent>() {
@@ -199,6 +194,7 @@ public class FXController {
                 
             }
         });
+        
         txtFieldSize.textProperty().addListener((observable, oldValue, newValue) -> {
         if (newValue.matches("\\d*")) return;
         txtFieldSize.setText(newValue.replaceAll("[^\\d]", ""));  
